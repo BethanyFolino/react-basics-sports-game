@@ -17,6 +17,8 @@ class Team extends React.Component {
     super(props);
 
     this.state = {
+      shots: 0,
+      score: 0,
       name: props.name,
       logo: props.logo,
     };
@@ -27,6 +29,10 @@ class Team extends React.Component {
       <div>
         <h2>{this.props.name}</h2>
         <img src={this.props.logo} width="200" />
+        <br />
+        Shots: {this.state.shots}
+        <br />
+        Score: {this.state.score}
       </div>
     );
   }
