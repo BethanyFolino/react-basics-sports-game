@@ -1,3 +1,5 @@
+const shotSound = new Audio("FOOTBALLKICK.wav");
+const scoreSound = new Audio("cheering1.wav");
 // Default App component that all other components are rendered through
 function App(props) {
   return (
@@ -30,6 +32,7 @@ class Team extends React.Component {
     this.setState((...state) => ({
       shots: this.state.shots + 1,
     }));
+    shotSound.play();
   };
 
   //Score
@@ -39,6 +42,7 @@ class Team extends React.Component {
       this.setState((...state) => ({
         score: this.state.score + 1,
       }));
+      scoreSound.play();
     }
   };
 
