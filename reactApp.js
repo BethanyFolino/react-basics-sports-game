@@ -74,10 +74,7 @@ class Team extends React.Component {
         ) : (
           <div></div>
         )}
-        <br />
-        <br />
         <button onClick={this.onClick}>Shoot!</button>
-        <br />
       </div>
     );
   }
@@ -92,6 +89,7 @@ class Game extends React.Component {
       <React.Fragment>
         <h1>Welcome to {this.props.name}!</h1>
         <Team name={this.props.homeTeam} logo={this.props.homeLogo} />
+        <h1>VS</h1>
         <Team name={this.props.awayTeam} logo={this.props.awayLogo} />
       </React.Fragment>
     );
