@@ -31,6 +31,16 @@ class Team extends React.Component {
     }));
   };
 
+  //Score
+  score = () => {
+    let number = Math.floor(Math.random() * 2);
+    if (number == 0) {
+      this.setState((...state) => ({
+        score: this.state.score + 1,
+      }));
+    }
+  };
+
   //Event handler for button
   onClick = (event) => {
     this.shotsTaken();
