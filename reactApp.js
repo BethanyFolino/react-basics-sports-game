@@ -24,6 +24,18 @@ class Team extends React.Component {
     };
   }
 
+  //Shots taken
+  shotsTaken = () => {
+    this.setState((...state) => ({
+      shots: this.state.shots + 1,
+    }));
+  };
+
+  //Event handler for button
+  onClick = (event) => {
+    this.shotsTaken();
+  };
+
   render() {
     return (
       <div>
@@ -33,6 +45,8 @@ class Team extends React.Component {
         Shots: {this.state.shots}
         <br />
         Score: {this.state.score}
+        <br />
+        <button onClick={this.onClick}>Shoot!</button>
       </div>
     );
   }
