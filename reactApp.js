@@ -41,6 +41,16 @@ class Team extends React.Component {
     }
   };
 
+  //Shot percentage
+  shotPercentage = () => {
+    this.setState((state) => {
+      return {
+        ...state,
+        percentage: Math.floor((state.score / state.shots) * 100),
+      };
+    });
+  };
+
   //Event handler for button
   onClick = (event) => {
     this.shotsTaken();
@@ -56,7 +66,15 @@ class Team extends React.Component {
         <br />
         Score: {this.state.score}
         <br />
+        {this.state.shots ? (
+          <div>Shot Percentage: {this.state.percentage + "%"}</div>
+        ) : (
+          <div></div>
+        )}
+        <br />
+        <br />
         <button onClick={this.onClick}>Shoot!</button>
+        <br />
       </div>
     );
   }
