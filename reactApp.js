@@ -3,6 +3,7 @@ function App(props) {
   return (
     <React.Fragment>
       <Game
+        name="The Untempered Schism"
         homeTeam="Gallifrey Time Lords"
         awayTeam="Planet Mondas Cybermen"
         homeLogo="./time-lords-logo.jpg"
@@ -54,6 +55,8 @@ class Team extends React.Component {
   //Event handler for button
   onClick = (event) => {
     this.shotsTaken();
+    this.score();
+    this.shotPercentage();
   };
 
   render() {
@@ -76,6 +79,21 @@ class Team extends React.Component {
         <button onClick={this.onClick}>Shoot!</button>
         <br />
       </div>
+    );
+  }
+}
+
+class Game extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <React.Fragment>
+        <h1>Welcome to {this.props.name}!</h1>
+        <Team name={this.props.homeTeam} logo={this.props.homeLogo} />
+        <Team name={this.props.awayTeam} logo={this.props.awayLogo} />
+      </React.Fragment>
     );
   }
 }
