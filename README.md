@@ -1,1 +1,2 @@
 # React Basics Sports Game
+React Basics Sports Game is a football game app. Users can play it and see their shot percentage as well as hear sound effects based on whether they made the shot or not. The current teams are Doctor Who themed because I am a Doctor Who fan. This was made as part of Kenzie Academy's software engineering program.
